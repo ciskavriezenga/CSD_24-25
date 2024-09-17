@@ -14,6 +14,4 @@ Content
 
 * #### Duration vs. timestamps
 
-* #### Verder
-  * _Hardware sessies --> verplicht, 4 sessies_ 
   

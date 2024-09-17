@@ -17,20 +17,36 @@ for note_dur in note_durations:
 
 print("time_durations", time_durations)
 
-# load a sample
-sample_plop = sa.WaveObject.from_wave_file("../assets/Plop.wav")
-
 # transform time durations to a sequence of timestamps
-# todo
+time_stamps = []
+total_dur = 0
+
+for dur in time_durations:
+    time_stamps.append(total_dur)
+    total_dur = total_dur + dur
+
+print(time_stamps)
+
 
 # retrieve the first time stamp (if it exist - else exit)
-# todo
+ts = time_stamps.pop(0)
 
 # store the current time
-# todo
+start_time = time.time()
 
+# load a sample
+sample_plop = sa.WaveObject.from_wave_file("../assets/Plop.wav")
 # iterate through time sequence and play sample
-# todo
+while True:
+    t_cur = time.time() - start_time
+
+    if t_cur >= ts:
+        sample_plop.play()
+        if len(time_stamps) > 0:
+            ts = time_stamps.pop(0)
+        else:
+            break
+    time.sleep(0.001)
 
 # wait till last sample is done playing before exit
 time.sleep(time_durations[-1])

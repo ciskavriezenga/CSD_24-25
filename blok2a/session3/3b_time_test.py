@@ -2,12 +2,12 @@ import time
 
 # Using time.sleep in a forloop does not guarantee exactly 1 sec.
 t = time.time()
-
 """
 for i in range(10):
     print("delta t:", time.time() - t)
     t = time.time()
     time.sleep(1)
+
 """
 """
 # This results in a cumulative error
@@ -16,13 +16,12 @@ zero_time = time.time()
 for i in range(10):
     time.sleep(1)
     print("delta t:", time.time()-zero_time)
+
+
 """
-
 # differences between short and long time.sleep durations
-
-test_durations = [0.1, 1.0, 10.0, 100.0]
+test_durations = [0.1, 1.0, 10.0]
 means = []
-
 
 for index, dur in enumerate(test_durations):
     sum = 0
@@ -35,7 +34,7 @@ for index, dur in enumerate(test_durations):
         print("time deviation:", deviation)
         sum += deviation
 
-    means.append(sum / num_tests)
+    means.append(sum / num_tests)s
     # reset sum for next test iteration
     sum = 0
 

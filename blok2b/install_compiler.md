@@ -12,7 +12,8 @@
 - run in de terminal: 
 
   ```brew install --cask vscodium```
-
+  
+  - installeer de c/c++ runner in vscodium 
   *(Of vraag een github studenten account aan en installeer clion 
   (dit hebben we nog niet getest mét de g++ install)).*
 
@@ -54,3 +55,18 @@
 (dit hebben we nog niet getest mét de g++ install)).*
 
 
+### LINUX
+Op Linux is g++ doorgaans al geïnstalleerd. Dit kun je checken door het volgende in de terminal te runnen.  
+
+```whereis g++```
+
+
+##### Installeer IDE
+
+_Werk je op LINUX? Ws werkte je dan al met VIM?_ 
+
+wil je ook met vscodium werken? Dan kun je hier even kijken welke manier van installeren relevant is voor jou:
+https://vscodium.com/
+
+
+---

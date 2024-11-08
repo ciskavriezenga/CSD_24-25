@@ -170,3 +170,7 @@ Icon
 
 # data
 *.csv
+
+
+# vscodium
+.vscode

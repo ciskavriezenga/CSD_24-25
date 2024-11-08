@@ -55,6 +55,10 @@
 (dit hebben we nog niet getest mét de g++ install)).*
 
 
+---
+
+
+
 ### LINUX
 Op Linux is g++ doorgaans al geïnstalleerd. Dit kun je checken door het volgende in de terminal te runnen.  
 

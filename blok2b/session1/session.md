@@ -13,10 +13,12 @@ Wanneer is wat handig?
 Zie ook https://dinkum.nl/software/cplusplus/doc/project_building/compiling_and_linking.html
 
 #### Eerste stappen op gebied van C++ 
-- Hello world
-- Class SayHello
-- Compilen
-- Class Speaker en de _has a relationship_
+- Hello world --> zie 1_hello
+- Class Note --> zie 2_note_class 
+- Compile met g++ --> zie tabel hieronder, gebruik voor nu:
+  
+  ```g++ [file_name].cpp -o [executable_name]```
+- Class Speaker en de _has a relationship_ --> zie 3_speaker
 
 #### Eventueel, anders volgende week 
 - cmake

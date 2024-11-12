@@ -9,16 +9,19 @@ Bouw dan je programma uit met bijv. het opvragen van je naam, leeftijd en ...?..
 Zie blok2b\assignments directory, assignment "instrument_class.pdf"
 MAAR: "Project files" --> losse bestanden hoeven nog niet.
 
-### 3 Eigen classes
+### 3 Voeg een Woofer toe aan het speaker voorbeeld
+Zie voorbeeld 3_speaker
+
+### 4 Eigen classes
 Bedenk zelf een aantal classes en werk deze uit in werkende voorbeelden, waarbij je logt naar de console en om input vraagt. 
 
-### 4 Cmake installeren en testen
+### 5 Cmake installeren en testen
 Installeer cmake en test het met het voorbeeld  in 4_cmake_test
 
-### 5 EXTRA: Coffeemaker
+### 6 EXTRA: Coffeemaker
 Zie blok2b\assignments\extra directory, assignment "Coffeemaker.pdf"
 
-### 6 EXTRA 2: Scale
+### 7 EXTRA 2: Scale
 Zie blok2b\assignments\extra directory, assignment "Scale.pdf"
 
 

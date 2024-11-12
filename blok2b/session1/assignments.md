@@ -12,11 +12,13 @@ MAAR: "Project files" --> losse bestanden hoeven nog niet.
 ### 3 Eigen classes
 Bedenk zelf een aantal classes en werk deze uit in werkende voorbeelden, waarbij je logt naar de console en om input vraagt. 
 
-### 4 EXTRA: Coffeemaker
+### 4 Cmake installeren en testen
+Installeer cmake en test het met het voorbeeld  in 4_cmake_test
+
+### 5 EXTRA: Coffeemaker
 Zie blok2b\assignments\extra directory, assignment "Coffeemaker.pdf"
 
-
-### 5 EXTRA 2: Scale
+### 6 EXTRA 2: Scale
 Zie blok2b\assignments\extra directory, assignment "Scale.pdf"
 
 

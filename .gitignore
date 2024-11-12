@@ -172,5 +172,6 @@ Icon
 *.csv
 
 
-# vscodium
+# vscodium / vscode
 .vscode
+

@@ -28,7 +28,12 @@ Dan maken we nu even JuceTest aan
 ```bash
 mkdir JuceTest
 cd JuceTest
+
+# MACOS / LINUX
 touch CMakeLists.txt
+
+# WINDOWS
+New-Item -ItemType File -Path "CMakeLists.txt"
 ```
 # 3: Test Project maken
 ## A: Project level CMakeLists.txt
@@ -59,7 +64,7 @@ kopieer de `audiocomponent.h` en de `main.cpp` vanuit de `JuceTest` map in de CS
 Je mag er in kijken als je wilt.   
 
 # 4: Builden!
-In de Terminal, navigeer naar de Top Level van je Project (waar je top level `CMakeLists.txt` zit) en genereer je build files met:   
+In de Terminal, navigeer naar de Top Level van je repository (waar de JUCE map ook zit) en genereer je build files met:   
 ```bash
 cmake -S . -B build
 ```
@@ -67,7 +72,7 @@ Hij gaat nu als het goed is ook de `Juceaide` bouwen. Dat is een helper tool voo
   
 navigeer nu naar de JuceTest map BINNEN de build map  
 ```bash
-cd build/JuceTest
+cd build/csd2b/JuceTest
 ```
 
 Hier kan je bouwen met:  

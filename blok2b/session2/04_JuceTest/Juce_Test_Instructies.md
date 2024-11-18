@@ -64,10 +64,8 @@ kopieer de `audiocomponent.h` en de `main.cpp` vanuit de `JuceTest` map in de CS
 Je mag er in kijken als je wilt.   
 
 # 4: Builden!
-In de Terminal, 
-````diff
-+ **navigeer naar de Top Level van je repository (waar de JUCE map ook zit)** en genereer je build files met:
-````
+In de Terminal, **navigeer naar de Top Level van je repository (waar de JUCE map ook zit)** en genereer je build files met:
+
 ```bash
 cmake -S . -B build
 ```

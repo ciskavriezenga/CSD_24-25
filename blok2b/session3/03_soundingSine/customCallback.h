@@ -1,8 +1,33 @@
-//
-// Created by Ciska Vriezenga on 18/11/2024.
-//
+#include "audiocomponent.h"
+//  Daan Schrier
+#include "sine.h"
 
-#ifndef CSD_24_25_CUSTOMCALLBACK_H
-#define CSD_24_25_CUSTOMCALLBACK_H
+struct CustomCallback : AudioCallback {
+    explicit CustomCallback (double Fs) : AudioCallback(Fs) {
 
-#endif //CSD_24_25_CUSTOMCALLBACK_H
+    }
+
+    ~CustomCallback() override {
+
+    }
+
+    void prepare (int sampleRate) override {
+
+    }
+
+    void process (AudioBuffer buffer) override {
+        auto [inputChannels, outputChannels, numInputChannels, numOutputChannels, numFrames] = buffer;
+
+        for (int channel = 0u; channel < numOutputChannels; ++channel) {
+            for (int sample = 0u; sample < numFrames; ++sample) {
+                outputChannels[channel][sample] = 0.0f;
+                // write sample to buffer at channel 0, amp = 0.25
+                outputChannels[channel][sample] = sine.getSample();
+                sine.tick();
+            }
+        }
+    }
+
+private:
+  Sine sine{220};
+};

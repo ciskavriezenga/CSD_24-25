@@ -1,5 +1,12 @@
 # SESSION 1
 
+
+### Hoe gaat het? 
+* rondje stand van zaken 
+* csd2a
+* git commits
+
+
 ### Classes in header, cpp files
 --> zie 01_cmake
 * opsplitsen van classes & cmake
@@ -14,7 +21,7 @@
 * Basic inheritance: Pet, Cat, Dog
 
 
-### Bonus ?
+### Bonus ?     
 * compile stappen
 * compile with build script
 

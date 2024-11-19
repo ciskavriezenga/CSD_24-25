@@ -1,8 +1,11 @@
 # Cmake
 
 run in de terminal 
+
 ```cmake -S . -B build```
+
 ```cd build```
+
 ```cmake --build . ```
 
 Wanneer je niet nieuwe bestanden toevoegt hoef je maar één keer cmake -S . -B  build te runnen. Bij wijzigingen in je code hoef je enkel in de build directory ```cmake --build .``` te runnen.  

@@ -24,6 +24,7 @@ abline(h = 0, lty = 1, col = "gray")
 # samplerate = the number of samples per seconds
 # Thus the wavelength of a sinewave with frequency = 1 equals the samplerate. 
 samplerate = 44100
+
 # In other words, the sinewave 'travels' one wave in 44100 discrete samples
 # Compared to the sinewave example in the continuous time example, we here need 
 # to 'spread it out over' 44100 samples. Herefore, within the calculation
@@ -39,7 +40,7 @@ abline(h = 0, lty = 1, col = "gray")
 # thus at every sample step it 'travels two times faster', 
 # therefore, we can simply multiply t with the frequency
 frequency <- 2
-sinewave <- function(t) sin(2* t * pi * frequency / samplerate)
+sinewave <- function(t) sin(t * 2 * pi * frequency / samplerate)
 curve(sinewave, add = TRUE, col = "violet")
 frequency <- 10
 sinewave <- function(t) sin(t * 2*pi * frequency / samplerate)
@@ -53,7 +54,7 @@ curve(sinewave, add = TRUE, col = "green")
 # Let t indicate the index of a sample,
 # then the equation is as follow (frequency is temporarily excluded 
 # for the sake of simplicity).
-# sample =  sin((t * 2 * pi) / samplerate)
+# sample value =  sin((t * 2 * pi) / samplerate)
 
 # we can rewrite this function: 
 # sample =  sin((t / samplerate) * 2 * pi)
@@ -106,11 +107,14 @@ curve(sinewave, add = TRUE, col = "green")
   plot(c(1:numSamplesToDisplay), output)
 }
 
-# QUESTION: what are the benefits of working with a phase instead of time index? 
 
 
 
 
+
+
+
+# QUESTION: what are the benefits of working with a phase instead of time? 
 
 # TIP: what happens in both scenarios when you alter the frequency?
 

@@ -1,0 +1,13 @@
+bits in a float:
+
+- sign: 1
+- exponent: 8 --> [-127, 128]
+- mantissa: 23 bit --> [0, 2^23 -1] --> [0, 8388607]
+
+value = sign * mantissa * 2^exponent
+
+.1111111111
+
+vs
+
+1111.111111

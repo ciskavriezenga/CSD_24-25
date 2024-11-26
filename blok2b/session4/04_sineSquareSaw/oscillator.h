@@ -23,7 +23,7 @@ protected:
   // abstract method calculate - needs to be overriden by subclasses
   virtual void calculate() = 0;
   float frequency;
-  float amplitude;
+  float amplitude {0.25f};
   float phase;
   // sample contains the current sample
   float sample;

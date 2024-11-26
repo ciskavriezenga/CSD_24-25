@@ -1,6 +1,6 @@
 #include <iostream>
 #include <thread>
-#include "jack_module.h"
+#include "audiocomponent.h"
 #include "writeToFile.h"
 #include "math.h"
 #include <limits>

@@ -1,10 +1,9 @@
 #include <iostream>
 #include <thread>
-#include "jack_module.h"
 #include "math.h"
 #include "audioToFile.h"
 #include "oscillator.h"
-
+#include "callback.h"
 /*
  * NOTE: jack2 needs to be installed
  * jackd invokes the JACK audio server daemon
@@ -17,12 +16,15 @@
 
 
 int main(int argc, char **argv) {
-  auto callback = CustomCallback{};
-  auto jackModule = JackModule{callback};
+    ScopedMessageThreadEnabler scopedMessageThreadEnabler;
+    CustomCallback audioSource (44100);
+    JUCEModule juceModule (audioSource);
+    juceModule.init(1,1);
+
 
 #if WRITE_TO_FILE
   AudioToFile audioToFile;
-  audioToFile.write(callback);
+  audioToFile.write(audioSource);
 #else
 
   jackModule.init(0, 1);

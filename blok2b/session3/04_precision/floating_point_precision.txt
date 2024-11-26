@@ -11,3 +11,5 @@ value = sign * mantissa * 2^exponent
 vs
 
 1111.111111
+
+

@@ -11,7 +11,6 @@ Sine::~Sine() {
   std::cout << "Sine - destructor\n";
 }
 
-
 float Sine::getSample() {
   return sample;
 }

@@ -17,8 +17,6 @@ void Sine::setSamplerate(float samplerate) {
   this->samplerate =samplerate;
 }
 
-
-
 float Sine::getSample() {
   return sample;
 }

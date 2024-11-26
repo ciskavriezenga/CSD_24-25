@@ -20,7 +20,6 @@ struct CustomCallback : AudioCallback {
 
         for (int channel = 0u; channel < numOutputChannels; ++channel) {
             for (int sample = 0u; sample < numFrames; ++sample) {
-                outputChannels[channel][sample] = 0.0f;
                 // write sample to buffer at channel 0, amp = 0.25
                 outputChannels[channel][sample] = sine.getSample();
                 sine.tick();
@@ -29,5 +28,5 @@ struct CustomCallback : AudioCallback {
     }
 
 private:
-  Sine sine{220};
+  Sine sine{440};
 };

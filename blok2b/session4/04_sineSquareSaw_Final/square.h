@@ -12,7 +12,7 @@ public:
   Square(float frequency= 0, float samplerate = 44100);
 
 protected:
-  void calculate();
+  void calculate() override;
 };
 
 #endif //BLOK2B_SQUARE_H

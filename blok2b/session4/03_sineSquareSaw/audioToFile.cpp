@@ -44,11 +44,11 @@ AudioToFile::AudioToFile (int numInputchannels,
                           int numFrames)
   : numInputChannels (numInputchannels),
     numOutputChannels (numOutputChannels),
-    numFrames(numFrames) {
+    numFrames (numFrames) {
   // instantiate fileWriter and AudioBuffer
   // filepath of source directory
-const std::string sourcePath = SOURCE_DIR;
-  fileWriter = std::make_unique<WriteToFile>(sourcePath + "/output.csv", true);
+  const std::string sourcePath = SOURCE_DIR;
+  fileWriter = std::make_unique<WriteToFile> (sourcePath + "/output.csv", true);
 
   inputChannel = new float*[numInputChannels];
   outputChannel = new float*[numOutputChannels];
@@ -75,7 +75,7 @@ AudioToFile::~AudioToFile() {
   delete[] outputChannel;
 }
 
-void AudioToFile::write(CustomCallback& callback) {
+void AudioToFile::write (CustomCallback& callback) {
   // TODO - CODE REVIEW
   // CODE BELOW IS HASTLY CODED ...
 

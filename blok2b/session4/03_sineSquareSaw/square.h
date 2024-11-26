@@ -12,4 +12,4 @@ public:
 };
 
 
-#endif //SQUARE_H_
+#endif  //SQUARE_H_

@@ -7,12 +7,12 @@
 
 #include "oscillator.h"
 
-class Square : public Oscillator{
+class Square : public Oscillator {
 public:
-  Square(float frequency= 0, float samplerate = 44100);
+  Square (float frequency = 0, float samplerate = 44100);
 
 protected:
   void calculate() override;
 };
 
-#endif //BLOK2B_SQUARE_H
+#endif  //BLOK2B_SQUARE_H

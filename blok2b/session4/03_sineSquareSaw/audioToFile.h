@@ -1,7 +1,7 @@
 #include "callback.h"
 #include <fstream>
 #include <iostream>
-#include<memory>
+#include <memory>
 #include <sys/stat.h>
 
 class WriteToFile {
@@ -31,7 +31,6 @@ public:
   void write (CustomCallback& callback);
 
 private:
-
   std::unique_ptr<WriteToFile> fileWriter;
   std::unique_ptr<AudioBuffer> audioBuffer;
 

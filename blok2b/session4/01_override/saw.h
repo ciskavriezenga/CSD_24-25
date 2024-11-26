@@ -1,10 +1,9 @@
 #pragma once
 
-#include <iostream>
 #include "oscillator.h"
+#include <iostream>
 
-class Saw : public Oscillator
-{
+class Saw : public Oscillator {
 public:
   Saw();
   ~Saw();

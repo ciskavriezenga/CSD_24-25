@@ -5,8 +5,7 @@
  * Simple example of overriding methods.
  */
 
-int main()
-{
+int main() {
   std::cout << "Creating objects\n";
   Oscillator oscillator;
   Sine sine;

@@ -4,9 +4,7 @@
  * Simple example of overriding methods.
  */
 
-int main()
-{
-
+int main() {
   Oscillator osc;
 
   Sine sine;
@@ -25,13 +23,14 @@ int main()
    * method, which is the case in the baseclass method tick
    * --> we do not call the subclass method .... whoops.
    */
-  std::cout << "\nCalling the sine.tick method, which is a baseclass method.\n"
+  std::cout
+    << "\nCalling the sine.tick method, which is a baseclass method.\n"
     << "Inside this baseclass method, the calculate method of the baseclass will be called."
     << std::endl;
   sine.tick();
 
   std::cout << "\nEnd main.\n";
-   /*
+  /*
    * WE NEED THE KEYWORD 'virtual'!
    * Solution: we need to add the word virtual
    * _______ * * * DIY * * *  _______

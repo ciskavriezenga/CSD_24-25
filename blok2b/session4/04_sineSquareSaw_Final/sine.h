@@ -6,13 +6,13 @@
 #define BLOK2B_SINE_H
 #include "oscillator.h"
 
-class Sine : public Oscillator{
+class Sine : public Oscillator {
 public:
-  Sine(float frequency= 0, float samplerate = 44100);
+  Sine (float frequency = 0, float samplerate = 44100);
 
 protected:
   void calculate();
 };
 
 
-#endif //BLOK2B_SINE_H
+#endif  //BLOK2B_SINE_H

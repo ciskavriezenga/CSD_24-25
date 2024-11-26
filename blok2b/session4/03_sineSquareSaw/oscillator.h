@@ -2,21 +2,20 @@
 #define _Oscillator_H_
 #include <iostream>
 
-class Oscillator
-{
+class Oscillator {
 public:
-  Oscillator(float frequency= 0, float samplerate = 44100);
+  Oscillator (float frequency = 0, float samplerate = 44100);
   ~Oscillator();
 
   // allow to set samplerate after initialization
-  void setSamplerate(float samplerate);
+  void setSamplerate (float samplerate);
   //return the current sample
   float getSample();
   // go to next sample
   void tick();
 
   //getters and setters
-  void setFrequency(float frequency);
+  void setFrequency (float frequency);
   float getFrequency();
 
 private:

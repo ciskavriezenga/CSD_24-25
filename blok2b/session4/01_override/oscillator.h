@@ -2,8 +2,7 @@
 
 #include <iostream>
 
-class Oscillator
-{
+class Oscillator {
 public:
   Oscillator();
   ~Oscillator();

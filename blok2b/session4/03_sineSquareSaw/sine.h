@@ -12,4 +12,4 @@ public:
 };
 
 
-#endif //SINE_H_
+#endif  //SINE_H_

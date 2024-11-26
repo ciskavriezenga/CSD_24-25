@@ -1,17 +1,22 @@
 #ifndef CALLBACK_H
 #define CALLBACK_H
 
-#include "jack_module.h"
+#include "audiocomponent.h"
 #include "oscillator.h"
+#include "square.h"
+#include "sine.h"
 
 class CustomCallback : public AudioCallback {
 public:
-  void prepare(int rate) override;
-  void process(AudioBuffer buffer) override;
+    CustomCallback(float sampleRate);
+    void prepare(int rate) override;
+    void process(AudioBuffer buffer) override;
 
 private:
-  float samplerate = 44100;
-  Oscillator oscillator = Oscillator(220, samplerate);
+    float samplerate = 44100;
+    Square oscillator{220, samplerate};
+//    Sine oscillator {440, samplerate};
 };
 
 #endif //CALLBACK_H
+

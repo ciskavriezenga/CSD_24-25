@@ -16,7 +16,6 @@ void CustomCallback::process(AudioBuffer buffer) {
     for (int channel = 0u; channel < numOutputChannels; ++channel) {
         for (int sample = 0u; sample < numFrames; ++sample) {
             outputChannels[channel][sample] = 0.0f;
-            // write sample to buffer at channel 0, amp = 0.25
             outputChannels[channel][sample] = oscillator.getSample();
             oscillator.tick();
         }

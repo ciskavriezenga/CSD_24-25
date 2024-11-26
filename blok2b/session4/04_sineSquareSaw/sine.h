@@ -1,15 +1,18 @@
-#ifndef _SINE_H_
-#define _SINE_H_
+//
+// Created by Ciska Vriezenga on 06/12/2022.
+//
 
+#ifndef BLOK2B_SINE_H
+#define BLOK2B_SINE_H
+#include "oscillator.h"
 
-class Sine {
+class Sine : public Oscillator{
 public:
-  Sine();
-  ~Sine();
+  Sine(float frequency= 0, float samplerate = 44100);
 
-  //override calculate from base class
+protected:
   void calculate();
 };
 
 
-#endif //SINE_H_
+#endif //BLOK2B_SINE_H

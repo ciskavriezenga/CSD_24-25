@@ -2,8 +2,8 @@
 #define CALLBACK_H
 
 #include "jack_module.h"
-#include "sine.h"
-#include "square.h"
+#include "../04_sineSquareSaw/sine.h"
+#include "../04_sineSquareSaw/square.h"
 
 class CustomCallback : public AudioCallback {
 public:

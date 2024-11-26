@@ -20,12 +20,6 @@ float Oscillator::getSample() {
   return sample;
 }
 
-void Oscillator::tick() {
-  phase += frequency / samplerate;
-  // wrap the phase to interval [0, 1]
-  if(phase > 1) phase -= 1.0;
-  sample = sin(M_PI * 2 * phase) * amplitude;
-}
 
 //getters and setters
 void Oscillator::setFrequency(float frequency)
@@ -38,4 +32,14 @@ void Oscillator::setFrequency(float frequency)
 float Oscillator::getFrequency()
 {
   return frequency;
+}
+
+void Oscillator::tick()
+{
+  // increment the phase to allow calculation of next sample
+  phase += frequency / samplerate;
+  // wrap the phase to interval [0, 1]
+  if(phase > 1) phase -= 1.0;
+  // calculate sample for the incremented phase
+  calculate();
 }

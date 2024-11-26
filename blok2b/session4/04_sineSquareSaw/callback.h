@@ -3,6 +3,8 @@
 
 #include "audiocomponent.h"
 #include "oscillator.h"
+#include "square.h"
+#include "sine.h"
 
 class CustomCallback : public AudioCallback {
 public:
@@ -12,7 +14,8 @@ public:
 
 private:
     float samplerate = 44100;
-    Oscillator oscillator = Oscillator(220, samplerate);
+    Square oscillator{220, samplerate};
+//    Sine oscillator {440, samplerate};
 };
 
 #endif //CALLBACK_H

@@ -1,15 +1,18 @@
-#ifndef _SQUARE_H_
-#define _SQUARE_H_
+//
+// Created by Ciska Vriezenga on 06/12/2022.
+//
 
+#ifndef BLOK2B_SQUARE_H
+#define BLOK2B_SQUARE_H
 
-class Square {
+#include "oscillator.h"
+
+class Square : public Oscillator{
 public:
-  Square();
-  ~Square();
+  Square(float frequency= 0, float samplerate = 44100);
 
-  //override calculate from base class
+protected:
   void calculate();
 };
 
-
-#endif //SQUARE_H_
+#endif //BLOK2B_SQUARE_H

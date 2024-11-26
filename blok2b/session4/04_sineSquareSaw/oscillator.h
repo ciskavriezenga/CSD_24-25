@@ -12,14 +12,16 @@ public:
   void setSamplerate(float samplerate);
   //return the current sample
   float getSample();
-  // go to next sample
-  void tick();
 
   //getters and setters
   void setFrequency(float frequency);
   float getFrequency();
+  // go to next sample
+  void tick();
 
-private:
+protected:
+  // abstract method calculate - needs to be overriden by subclasses
+  virtual void calculate() = 0;
   float frequency;
   float amplitude;
   float phase;

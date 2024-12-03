@@ -1,4 +1,5 @@
 #include "square.h"
+#include "math.h"
 
 Square::Square (float frequency, float samplerate)
   : Oscillator (frequency, samplerate) {

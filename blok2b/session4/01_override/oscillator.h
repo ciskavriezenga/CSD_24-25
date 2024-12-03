@@ -7,5 +7,6 @@ public:
   Oscillator();
   ~Oscillator();
 
-  void calculate();
+  void tick();
+  virtual void calculate() = 0;
 };

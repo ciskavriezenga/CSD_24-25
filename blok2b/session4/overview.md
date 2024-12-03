@@ -8,22 +8,15 @@
   * Hoe gaat het?
   * git _(* randvoorwaarde)_
 
-* #### Precision & phase wrap
-  * <u>**example 01_sin_function**</u>
-    * view pngs
-
-
 
 * #### (pure) virtual methods & abstract classes
-  * override
-  <u>**example 02_override**</u>
+  * 01_override 
   * <b>slides - session 4</b>
-  * virtual method
-  * pure virtual method & abstract class
-  <u>**example 03_override_callFromBase**</u>
+  * 02_override --> virtual method
+  * 02_override --> pure virtual method & abstract class
 
 * #### oscillators
-  * <u>**example 04_sin_sineSquareSaw**</u>
+  03_sineSquareSaw and 04_sineSquareSawFinal
     1. let's add Sine as subclass of Oscillator 
     2. add subclass square
     3. add subclass saw

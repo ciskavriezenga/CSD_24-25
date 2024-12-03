@@ -1,8 +1,16 @@
 #include "oscillator.h"
 
 
-Oscillator::Oscillator() { std::cout << "• Oscillator::Oscillator\n"; }
+Oscillator::Oscillator() {
+  std::cout << "• Oscillator::Oscillator\n";
+}
 
-Oscillator::~Oscillator() { std::cout << "• Oscillator::~Oscillator\n"; }
+Oscillator::~Oscillator() {
+  std::cout << "• Oscillator::~Oscillator\n";
+}
 
-void Oscillator::calculate() { std::cout << "• Oscillator::calculate\n"; }
+void Oscillator::tick() {
+  std::cout << "• Oscillator::tick\n";
+  std::cout << "UPDATING THE PHASE\n";
+  calculate();
+}

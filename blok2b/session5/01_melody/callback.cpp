@@ -4,12 +4,12 @@ Callback::Callback(float sampleRate) : AudioCallback(sampleRate), sampleRate(sam
   std::cout << "art-farts.com" << std::endl;
 }
 
-void Callback::prepare (int sampleRate) override {
+void Callback::prepare (int sampleRate)  {
   this->sampleRate = sampleRate;
   updatePitch(melody, square);
 }
 
-void Callback::process(AudioBuffer buffer) override {
+void Callback::process(AudioBuffer buffer)  {
   auto [inputChannels,
         outputChannels,
         numInputChannels,

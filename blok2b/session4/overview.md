@@ -19,4 +19,11 @@
   03_sineSquareSaw and 04_sineSquareSawFinal
     1. let's add Sine as subclass of Oscillator 
     2. add subclass square
-    3. add subclass saw
+    3. add subclass saw --> assignment
+
+* #### callback 
+  Audio callback functionality
+
+* #### class diagram
+  Eindopdracht class diagram - eerste start
+

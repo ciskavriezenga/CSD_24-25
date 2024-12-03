@@ -13,7 +13,7 @@ public:
 
 private:
   float samplerate = 44100;
-  Sine sineOsc { 440, samplerate };
+  Sine sineOsc { 205, samplerate };
   Square squareOsc { 220, samplerate };
 };
 

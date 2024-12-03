@@ -20,8 +20,8 @@ int main (int argc, char** argv) {
         running = false;
         break;
     }
-  }  // while
+  }
 
   return 0;
 
-}  // main()
+}

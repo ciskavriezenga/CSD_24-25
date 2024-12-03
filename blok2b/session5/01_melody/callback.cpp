@@ -1,11 +1,7 @@
-//
-// Created by Dean on 03/12/2024.
-//
-
 #include "callback.h"
 
 Callback::Callback(float sampleRate) : AudioCallback(sampleRate), sampleRate(sampleRate) {
-  std::cout << "" << std::endl;
+  std::cout << "art-farts.com" << std::endl;
 }
 
 void Callback::prepare (int sampleRate) override {
@@ -30,11 +26,9 @@ void Callback::process(AudioBuffer buffer) override {
 	     *  In a multichannel setting we should update pitches independently per channel!
 	     */
       if (frameIndex >= noteDelayFactor * sampleRate) {
-        // reset frameIndex
         frameIndex = 0;
         updatePitch (melody, square);
       } else {
-        // increment frameindex
         frameIndex++;
       }
     }

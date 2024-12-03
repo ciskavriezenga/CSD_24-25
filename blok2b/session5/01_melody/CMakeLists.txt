@@ -1,9 +1,9 @@
-project(01_melody VERSION 0.0.1)
-juce_add_console_app(01_melody PRODUCT_NAME "example")
-target_sources(01_melody PRIVATE main.cpp square.cpp melody.cpp callback.cpp)
-target_compile_definitions(01_melody PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 SOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}")
+project(05_01_melody VERSION 0.0.1)
+juce_add_console_app(05_01_melody PRODUCT_NAME "example")
+target_sources(05_01_melody PRIVATE main.cpp square.cpp melody.cpp callback.cpp)
+target_compile_definitions(05_01_melody PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0 SOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}")
 
-target_link_libraries(01_melody
+target_link_libraries(05_01_melody
         PRIVATE
         juce::juce_audio_basics
         juce::juce_audio_devices
@@ -15,4 +15,4 @@ target_link_libraries(01_melody
         juce::juce_recommended_warning_flags
 )
 
-target_compile_features(01_melody PRIVATE cxx_std_20)
+target_compile_features(05_01_melody PRIVATE cxx_std_20)

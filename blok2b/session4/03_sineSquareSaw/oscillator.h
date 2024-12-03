@@ -13,17 +13,20 @@ public:
   float getSample();
   // go to next sample
   void tick();
+  // calculate next sample (pure virtual)
+  virtual void calculate() = 0;
 
   //getters and setters
   void setFrequency (float frequency);
   float getFrequency();
 
+protected:
+  float sample;
+  float phase;
+  float amplitude;
 private:
   float frequency;
-  float amplitude;
-  float phase;
   // sample contains the current sample
-  float sample;
   float samplerate;
 };
 

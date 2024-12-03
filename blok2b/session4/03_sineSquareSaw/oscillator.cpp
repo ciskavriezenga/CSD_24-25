@@ -23,7 +23,8 @@ void Oscillator::tick() {
   phase += frequency / samplerate;
   // wrap the phase to interval [0, 1]
   if (phase > 1) phase -= 1.0;
-  sample = sin (M_PI * 2 * phase) * amplitude;
+  calculate();
+  sample *= amplitude;
 }
 
 //getters and setters

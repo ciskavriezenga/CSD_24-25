@@ -1,5 +1,5 @@
 /*
-  Example program that plays a simple hard coded melody using a square wave oscillator
+  Example program that plays a simple hard coded 01_melody using a square wave oscillator
 */
 
 #include "audiocomponent.h"

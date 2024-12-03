@@ -8,9 +8,9 @@ Melody::~Melody()
 
 
 /*
- * getNote() reads the next note from the melody
+ * getNote() reads the next note from the 01_melody
  *  and wraps around to the beginning when it reached the end
- *  of the melody
+ *  of the 01_melody
  */
 float Melody::getNote()
 {

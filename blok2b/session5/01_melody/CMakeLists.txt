@@ -12,7 +12,7 @@ target_link_libraries(05_01_melody
 
         PUBLIC
         juce::juce_recommended_config_flags
-        juce::juce_recommended_warning_flags
+        #juce::juce_recommended_warning_flags
 )
 
 target_compile_features(05_01_melody PRIVATE cxx_std_20)

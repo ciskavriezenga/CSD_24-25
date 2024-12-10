@@ -9,7 +9,7 @@
 
 
 #include <iostream>
-
+#include <string>
 
 std::string retrieveUserInput(std::string selectionOptions[], int numOptions)
 {

@@ -47,5 +47,5 @@ cmake_install.cmake
 Als je deze dingen al in je repository hebt staan, moet je ze verwijderen voordat je een .gitignore aanmaakt, <br>
 anders kan negeert git je bestand tijdens de `rm` opdracht. 
 
-
+## Handige Tool
 [.gitignore generator](https://www.toptal.com/developers/gitignore)

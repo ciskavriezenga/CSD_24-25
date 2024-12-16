@@ -6,7 +6,10 @@ int sumSquares(int* block, int numNumbers)
 {
   int sum = 0;
 
-  for(int i = 0; i < numNumbers; i++) sum += block[i] * block[i];
+  for(int i = 0; i < numNumbers; i++) {
+    sum += block[i] * block[i];
+  }
+
   return sum;
 } // sumsquares()
 
@@ -28,5 +31,6 @@ int main()
   // console out sum of the squares of all values in the array
   std::cout << sumSquares(numbers, numNums) << std::endl;
 
+  
   return 0;
 }

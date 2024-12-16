@@ -42,7 +42,7 @@ double total=0;
 
 int main()
 {
-unsigned long duration;
+  unsigned long duration;
 
   tz.tz_minuteswest= -60; // set time zone
 

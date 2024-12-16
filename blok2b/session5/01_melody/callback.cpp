@@ -35,6 +35,8 @@ void Callback::process(AudioBuffer buffer)  {
   }
 }
 
+
+// NOTE - refactor --> Synth
 double Callback::mtof (float mPitch){
   return 440.0 * pow (2.0, (mPitch - 69.0f) / 12.0f);
 }

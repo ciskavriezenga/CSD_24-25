@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include "sine.h"
+#include <sine.h>
 
 class Tremolo
 {

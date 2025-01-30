@@ -1,6 +1,7 @@
 //
 // Created by Dean on 02/12/2023.
 //
+#pragma once
 
 #include <juce_audio_basics/juce_audio_basics.h>
 #include <juce_audio_devices/juce_audio_devices.h>
@@ -16,11 +17,11 @@ private:
 
 class AudioCallback : public juce::AudioSource {
 public:
-  AudioCallback (double sampleRate) : Fs (sampleRate) {}
+  explicit AudioCallback (float sampleRate) : Fs (sampleRate) {}
 
   void prepareToPlay (int samplesPerBlockExpected, double sampleRate) override {
     juce::ignoreUnused (samplesPerBlockExpected);
-    Fs = sampleRate;
+    Fs = static_cast<float> (sampleRate);
     prepare (static_cast<int> (Fs));
   }
   void releaseResources() override {}
@@ -33,7 +34,7 @@ public:
   virtual void prepare (int sampleRate) = 0;
 
 private:
-  double Fs;
+ float Fs;
 
   void processBlock (const juce::AudioSourceChannelInfo& bufferToFill) {
     const auto buffer =

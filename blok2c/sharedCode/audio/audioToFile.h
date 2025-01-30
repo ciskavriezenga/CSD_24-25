@@ -1,5 +1,5 @@
 #pragma once
-#include "jack_module.h"
+#include "audiocomponent.h"
 #include <fstream>
 #include <iostream>
 #include<memory>

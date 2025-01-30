@@ -1,8 +1,8 @@
 #include <iostream>
 #include <thread>
-#include "audioToFile.h"
+#include <audioToFile.h>
+#include <square.h>
 #include "circBuffer.h"
-#include "square.h"
 
 #define SAMPLERATE 44100
 
@@ -16,7 +16,9 @@ int main(int argc,char **argv)
   circBuffer.logAllSettings();
 
   Square square(freq, SAMPLERATE);
-  WriteToFile fileWriter("output.csv", true);
+
+  const std::string sourcePath = SOURCE_DIR;
+  WriteToFile fileWriter(sourcePath + "/output.csv", true);
 
   // generate 200 samples
   // write sum of output of both the sine directly and the circBuffer to a file

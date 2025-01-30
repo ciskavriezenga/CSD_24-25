@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include "oscillator.h"
+#include <oscillator.h>
 
 class Tremolo
 {

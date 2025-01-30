@@ -1,5 +1,7 @@
 #include "callback.h"
 
+CustomCallback::CustomCallback (float sampleRate)
+  : AudioCallback (sampleRate), samplerate (sampleRate) {}
 
 void CustomCallback::prepare(int rate) {
     samplerate = (float) rate;

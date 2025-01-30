@@ -1,3 +1,3 @@
 add_subdirectory(01_tremeloSession)
 add_subdirectory(02_tremolo)
-#add_subdirectory(03_tremeloProcessBuffer)
+add_subdirectory(03_tremeloProcessBuffer)

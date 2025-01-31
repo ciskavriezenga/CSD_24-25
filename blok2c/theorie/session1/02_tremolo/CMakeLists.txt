@@ -14,7 +14,7 @@ target_link_libraries(02_tremolo PRIVATE
 
         PUBLIC
         juce::juce_recommended_config_flags
-        juce::juce_recommended_warning_flags
+#        juce::juce_recommended_warning_flags
 )
 
 target_compile_features(02_tremolo PRIVATE cxx_std_20)

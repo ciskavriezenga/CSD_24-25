@@ -6,20 +6,23 @@
 #include <audioToFile.h>
 
 
-#define WRITE_TO_FILE 0
+#define WRITE_TO_FILE 1
 
 
 int main(int argc, char **argv) {
   ScopedMessageThreadEnabler scopedMessageThreadEnabler;
   CustomCallback audioSource{44100};
 
+  JUCEModule juceModule (audioSource);
+  juceModule.init (1, 1);
+
 #if WRITE_TO_FILE
-  AudioToFile audioToFile;
+  const std::string sourcePath = SOURCE_DIR;
+  AudioToFile audioToFile (sourcePath + "/output.csv");
   audioToFile.write (audioSource);
 #else
 
-  JUCEModule juceModule (audioSource);
-  juceModule.init (1, 1);
+
 
   bool running = true;
   while (running) {

@@ -15,7 +15,7 @@ WriteToFile::WriteToFile (std::string fileName, bool overwrite) {
 
 WriteToFile::~WriteToFile() { file.close(); }
 
-bool WriteToFile::write (std::string text) {
+bool WriteToFile::write (const std::string& text) {
   if (file.is_open()) {
     file << text;
     return true;
@@ -33,20 +33,22 @@ bool WriteToFile::fileExists (const std::string& fileName) {
   return false;
 }
 
-bool WriteToFile::openFile (std::string fileName) {
+bool WriteToFile::openFile (const std::string& fileName) {
   file.open (fileName);
   return file.is_open();
 }
 
 
-AudioToFile::AudioToFile (int numInputchannels,
+AudioToFile::AudioToFile (const std::string& fileName,
+                          int numInputchannels,
                           int numOutputChannels,
                           int numFrames)
   : numInputChannels (numInputchannels),
     numOutputChannels (numOutputChannels),
     numFrames(numFrames) {
   // instantiate fileWriter and AudioBuffer
-  fileWriter = std::make_unique<WriteToFile>("output.csv", true);
+
+  fileWriter = std::make_unique<WriteToFile>(fileName, true);
 
   inputChannel = new float*[numInputChannels];
   outputChannel = new float*[numOutputChannels];

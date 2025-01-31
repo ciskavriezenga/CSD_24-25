@@ -1,8 +1,9 @@
 #include <iostream>
 #include <thread>
-#include "audioToFile.h"
+#include <audioToFile.h>
+#include <square.h>
 #include "circBuffer.h"
-#include "square.h"
+
 
 #define SAMPLERATE 44100
 
@@ -16,7 +17,8 @@ int main(int argc,char **argv)
   float freq = (float) SAMPLERATE / cycleFrameLength;
   Square square(freq, SAMPLERATE);
 
-  WriteToFile fileWriter("output.csv", true);
+  const std::string sourcePath = SOURCE_DIR;
+  WriteToFile fileWriter(sourcePath + "/output.csv", true);
 
   // generate 200 samples
   // TODO - write sum of output of both the square directly and the circBuffer to a file

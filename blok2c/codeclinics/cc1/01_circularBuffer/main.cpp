@@ -18,10 +18,10 @@ int main(int argc,char **argv)
   Square square(freq, SAMPLERATE);
 
   const std::string sourcePath = SOURCE_DIR;
-  WriteToFile fileWriter(sourcePath + "/output.csv", true);
+  WriteToFile fileWdriter(sourcePath + "/output.csv", true);
 
   // generate 200 samples
-  // write sum of output of both the sine directly and the circBuffer to a file
+  // write sum of output of both the square directly and the circBuffer to a file
   float squareSample = 0;
   for(int i = 0; i < 200; i++) {
     squareSample = square.genNextSample();

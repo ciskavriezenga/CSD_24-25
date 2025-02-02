@@ -16,6 +16,8 @@ int main(int argc, char **argv) {
 #if WRITE_TO_FILE
   const std::string sourcePath = SOURCE_DIR;
   AudioToFile audioToFile (sourcePath + "/output.csv");
+  std::cout << "\nWriting file to path " << (sourcePath + "/output.csv")
+            << std::endl;
   audioToFile.write (audioSource);
 #else
 

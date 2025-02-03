@@ -1,6 +1,6 @@
 #include <iostream>
 #include "wavetableGenerator.h"
-#include "writeToFile.h"
+#include <audioToFile.h>
 
 #define BUFFER_SIZE 512
 
@@ -11,9 +11,11 @@ int main() {
     WavetableGenerator::WaveformType::SINE);
 
   // write generated wavetable to csv file
-  WriteToFile fileWriter("output.csv", true);
+  const std::string sourcePath = SOURCE_DIR;
+  WriteToFile writeToFile (sourcePath + "/output.csv", true);
+
   for(int i = 0; i < BUFFER_SIZE; i++) {
-    fileWriter.write(std::to_string(wavetable[i]) + "\n");
+    writeToFile.write(std::to_string(wavetable[i]) + "\n");
   }
 
   std::cout << "\n***** DONE ***** "

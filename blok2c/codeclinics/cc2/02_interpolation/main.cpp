@@ -1,5 +1,5 @@
 #include <iostream>
-#include "audioToFile.h"
+#include <audioToFile.h>
 
 #define BUFFER_SIZE 10
 
@@ -12,13 +12,13 @@ int main() {
   }
 
 
-
   // ----- apply linear interpolation and write result to file -----
   // floating point index and incrementation value
   float fpIndex = 0;
   float incrValue = 1.5;
   // open file to write output to
-  WriteToFile fileWriter("output.csv", true);
+  const std::string sourcePath = SOURCE_DIR;
+  WriteToFile writeToFile (sourcePath + "/output.csv", true);
 
   // iterate through buffer with floating point index
   while (fpIndex < (BUFFER_SIZE - 1)) {
@@ -37,7 +37,7 @@ int main() {
       << ", high: " << high
       << ", delta: " << delta
       << "\nvalue: " << value << std::endl;
-    fileWriter.write(std::to_string(value) + "\n");
+    writeToFile.write(std::to_string(value) + "\n");
     // increment index
     fpIndex += incrValue;
   }

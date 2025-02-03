@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
-#include "sine.h"
-#include "saw.h"
-#include "square.h"
+#include <sine.h>
+#include <saw.h>
+#include <square.h>
 
 class WavetableGenerator
 {

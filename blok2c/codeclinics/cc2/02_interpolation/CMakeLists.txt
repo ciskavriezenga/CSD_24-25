@@ -1,0 +1,4 @@
+add_executable(02_interpolation main.cpp)
+target_link_libraries(02_interpolation PUBLIC audio)
+target_compile_definitions(02_interpolation PRIVATE SOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}")
+target_compile_features(02_interpolation PRIVATE cxx_std_20)

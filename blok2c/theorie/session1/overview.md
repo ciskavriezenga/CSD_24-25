@@ -20,7 +20,7 @@
 ## Terugblik
 
 
-## Tremelo Effect
+## Tremolo Effect
 
 
 

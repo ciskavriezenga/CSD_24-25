@@ -2,7 +2,7 @@
 #include "math.h"
 
 
-Sine::Sine() : Sine(0, 0) {}
+Sine::Sine() : Sine(0) {}
 
 Sine::Sine(float frequency, float samplerate) :
   Oscillator(frequency, samplerate) {}

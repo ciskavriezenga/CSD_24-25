@@ -1,0 +1,2 @@
+add_subdirectory(01_waveGenerator)
+add_subdirectory(02_waveshaperSession)

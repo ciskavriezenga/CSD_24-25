@@ -1,7 +1,7 @@
 #include "tremolo.h"
 
-Tremolo::Tremolo(float freq, float modDepth, float dryWet) :
-  Effect(dryWet), modDepth(modDepth), sine(freq)
+Tremolo::Tremolo(float freq, float modDepth) :
+  modDepth(modDepth), sine(freq)
 {}
 
 Tremolo::~Tremolo() {}
@@ -11,7 +11,7 @@ void Tremolo::prepare(float samplerate) {
   sine.prepare(samplerate);
 }
 
-float Tremolo::applyEffect(float sample) {
+float Tremolo::processFrame(float sample) {
   // transform sine in range [-1, 1] to range [0, 1]
   float modSignal = sine.genNextSample();
   // apply modDept

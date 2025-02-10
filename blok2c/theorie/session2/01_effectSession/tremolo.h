@@ -2,15 +2,17 @@
 
 #include <iostream>
 #include "sine.h"
-#include "effect.h"
 
-class Tremolo : public Effect
+class Tremolo
 {
 public:
-  Tremolo(float freq = 1.0f, float modDepth = 1.0f, float dryWet = 1.0f);
+  Tremolo(float freq, float modDepth);
   ~Tremolo();
 
-  void prepare(float samplerate) override;
+  void prepare(float samplerate);
+
+  // TODO - adapt into applyEffect(const float &input, float &output)
+  float processFrame(float sample);
 
   // setters and getters
   void setModFreq(float freq);
@@ -18,7 +20,7 @@ public:
 private:
   float modDepth;
   Sine sine;
-  float applyEffect(float sample) override;
+
   // hide default constructor
   Tremolo(){}
 };

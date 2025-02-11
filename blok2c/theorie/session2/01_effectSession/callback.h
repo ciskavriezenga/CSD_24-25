@@ -13,8 +13,8 @@ public:
   void process(AudioBuffer buffer) override;
 
 private:
-  float samplerate = 44100;
-  Tremolo tremolo = Tremolo(6, 1);
+  float samplerate;
+  Tremolo tremolo {6, 1};
   Delay delay {48000, 48000 * 2};
 };
 

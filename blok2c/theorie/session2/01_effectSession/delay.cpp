@@ -1,5 +1,7 @@
 #include "delay.h"
 
+#include <sine.h>
+
 Delay::Delay(int numDelaySamples, int maxDelaySamples) :
 size(maxDelaySamples) {
   allocateBuffer();
@@ -7,7 +9,7 @@ size(maxDelaySamples) {
 }
 
 Delay::~Delay() {
-
+  releaseBuffer();
 }
 
 void Delay::applyEffect(const float& input, float& output) {
@@ -21,14 +23,17 @@ void Delay::applyEffect(const float& input, float& output) {
 void Delay::allocateBuffer()
 {
   // allocate buffer and set all samples to 0
-  buffer = (float*)malloc(size * sizeof(float));
-  memset(buffer, 0, size * sizeof(float));
+  buffer = new float[size];
+  for (int i = 0; i < size; i++) {
+    buffer[i] = 0;
+  }
 }
 
 void Delay::releaseBuffer()
 {
   // free data allocated with memset
-  free(buffer);
+  delete[] buffer;
+  buffer = nullptr;
 }
 
 void Delay::setDistanceRW(uint distanceRW)

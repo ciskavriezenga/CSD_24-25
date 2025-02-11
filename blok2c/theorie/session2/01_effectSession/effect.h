@@ -11,8 +11,11 @@ public:
   Effect(float dryWet = 1.0);
   virtual ~Effect();
 
-protected:
+  virtual void prepare(float samplerate) = 0;
+  void processFrame(const float& input, float& output);
 
+protected:
+  virtual void applyEffect(const float& input, float& output) = 0;
 private:
 
 };

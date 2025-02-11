@@ -7,3 +7,9 @@ Effect::Effect(float dryWet) {
 }
 
 Effect::~Effect() {}
+
+void Effect::processFrame(const float& input, float& output) {
+  // TODO bypass
+  applyEffect(input, output);
+  // TODO dryWet
+}

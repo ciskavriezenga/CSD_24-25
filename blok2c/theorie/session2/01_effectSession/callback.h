@@ -15,7 +15,7 @@ public:
 private:
   float samplerate = 44100;
   Tremolo tremolo = Tremolo(6, 1);
-  // TODO - implement Delay
+  Delay delay {48000, 48000 * 2};
 };
 
 #endif //CALLBACK_H

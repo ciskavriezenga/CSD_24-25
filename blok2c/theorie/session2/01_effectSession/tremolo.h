@@ -1,19 +1,18 @@
 #pragma once
 
 #include <iostream>
+#include "effect.h"
 #include "sine.h"
 
-class Tremolo
+class Tremolo : public Effect
 {
 public:
   Tremolo(float freq, float modDepth);
   ~Tremolo();
 
-  void prepare(float samplerate);
+  void prepare(float samplerate) override;
 
-  // TODO - adapt into applyEffect(const float &input, float &output)
-  float processFrame(float sample);
-
+  void applyEffect(const float& input, float& output) override;
   // setters and getters
   void setModFreq(float freq);
 

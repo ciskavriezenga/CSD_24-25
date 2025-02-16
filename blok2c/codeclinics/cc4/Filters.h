@@ -5,7 +5,7 @@
 
 class Filter {
 public:
-    virtual double process(double input) = 0;
+    virtual float process(float input) = 0;
 };
 
 
@@ -14,22 +14,22 @@ public:
 //              |                   |
 //             (a)<-----------------
 //
-class IIRFilter : Filter {
+class IIRFilter : public Filter {
     public:
-    double process(double input) override {
+    float process(float input) override {
         // Y[n] = X[n] + aY[n-1]
         feedback = input + (a * feedback);
         return feedback;
     }
 
-    void setCoefficient(double coefficient) {
+    void setCoefficient(float coefficient) {
         // Do not exceed 1, for the safety of all our ears
         a = coefficient;
     }
 
 private:
-    double feedback { 0.0 };
-    double a { 0.0 }; // Coefficient "a" is mostly used for feedback lines
+    float feedback { 0.0 };
+    float a { 0.0 }; // Coefficient "a" is mostly used for feedback lines
 
 };
 
@@ -39,9 +39,9 @@ private:
 //              |                  |
 //             (b)-->[ 1 sample ]-->
 //
-class FIRFilter : Filter {
+class FIRFilter : public Filter {
     public:
-    double process(double input) override {
+    float process(float input) override {
         // Y[n] = X[n] - bX[n-1]
         auto output = input - (b * x1);
 
@@ -49,13 +49,13 @@ class FIRFilter : Filter {
         return output;
     }
 
-    void setCoefficient(double coefficient) {
+    void setCoefficient(float coefficient) {
         b = coefficient;
     }
 
 private:
-    double x1 {0.0 }; // x1 for a single sample delay
-    double b { 0.0 };  // Coefficient "b" is usually used for feed forward lines
+    float x1 {0.0 }; // x1 for a single sample delay
+    float b { 0.0 };  // Coefficient "b" is usually used for feed forward lines
 
 };
 
@@ -65,49 +65,49 @@ private:
 //              |                   |
 //             (a)<-----------------
 //
-class OnePole : Filter {
+class OnePole : public Filter {
     public:
-    double process(double input) override {
+    float process(float input) override {
         // Y[n] = bX[n] + aY[n-1]
         // You make this one:
 
     }
 
-    void setCoefficient(double coefficient) {
+    void setCoefficient(float coefficient) {
         a = coefficient;
         b = 1.0f - a;
     }
 
 private:
-    double feedback { 0.0 };
-    double a { 0.0 };
-    double b { 0.0 };
+    float feedback { 0.0 };
+    float a { 0.0 };
+    float b { 0.0 };
 };
 
 
 //                   4_Pole / Simple Cascade
 //   X[n]--->[OnePole][OnePole][OnePole][OnePole]--->Y[n]
 //
-class SimpleLadder : Filter {
+class SimpleLadder :  public Filter {
     public:
-    double process(double input) override {
+    float process(float input) override {
 
     }
 
-    void setCoefficient(double coefficient) {
+    void setCoefficient(float coefficient) {
         a = coefficient;
         b = 1.0f - a;
     }
 
 private:
-    double A { 0.0 };
-    double B { 0.0 };
-    double C { 0.0 };
-    double D { 0.0 };
+    float A { 0.0 };
+    float B { 0.0 };
+    float C { 0.0 };
+    float D { 0.0 };
 
 
-    double b { 0.0 };
-    double a { 0.0 };
+    float b { 0.0 };
+    float a { 0.0 };
 };
 
 
@@ -116,23 +116,23 @@ private:
 //              |                   |
 //             (a)<-----------------
 //
-class FourSample : Filter {
+class FourSample :  public Filter {
     public:
-    double process(double input) override {
+    float process(float input) override {
         // Y[n] = X[n] + aY[n-4]
 
     }
 
-    void setCoefficient(double coefficient) {
+    void setCoefficient(float coefficient) {
         a = coefficient;
         b = 1.0f - a;
     }
 
 
 private:
-    double feedback { 0.0 };
-    double b { 0.0 };
-    double a { 0.0 };
+    float feedback { 0.0 };
+    float b { 0.0 };
+    float a { 0.0 };
 };
 
 
@@ -144,34 +144,34 @@ private:
 //               (a2)<----------[ 1 sample ]
 //
 //
-class HalfBiquad : Filter {
+class HalfBiquad :  public Filter {
     public:
-    double process(double input) override {
+    float process(float input) override {
       // y[n] = bX[n] - a1Y[n-1] - a2Y[n-2]
 
     }
 
-    void setBCoefficient(double coefficient){
+    void setBCoefficient(float coefficient){
         b = coefficient;
     }
 
-    void setA1Coefficient(double coefficient) {
+    void setA1Coefficient(float coefficient) {
         a1 = coefficient;
     }
 
-    void setA2Coefficient(double coefficient) {
+    void setA2Coefficient(float coefficient) {
         a2 = coefficient;
     }
 
 
 private:
-    double b;
-    double a1;
-    double a2;
+    float b;
+    float a1;
+    float a2;
 };
 
 
-class Biquad : Filter {
+class Biquad :  public Filter {
 public:
     // Zoek een Biquad, en maak  'm :- )
     // Probeer het internet, of Will Pirkle, zijn verschillende benaderingen

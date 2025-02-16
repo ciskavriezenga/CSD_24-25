@@ -11,18 +11,15 @@
 
 struct CustomCallback : AudioCallback {
     explicit CustomCallback(double Fs) : AudioCallback(Fs) {
-        filter.setCoefficient(0.0);
+        filter.setCoefficient(0.9f);
     }
 
     ~CustomCallback() override {
-        delete saw;
-        saw = nullptr;
     }
 
     void prepare(int sampleRate, int blockSize) override {
-        saw = new Saw();
-        saw->prepare(sampleRate);
-        saw->setFrequency(110);
+        saw.prepare(sampleRate);
+        saw.setFrequency(110.5);
     }
 
     void process(AudioBuffer buffer) override {
@@ -30,17 +27,17 @@ struct CustomCallback : AudioCallback {
 
 
         for (auto sample = 0u; sample < numFrames; ++sample) {
-            auto output = saw->output() * 0.2;
+            float oscSample = saw.genNextSample() * 0.2f;
+            float filteredOutput = filter.process(oscSample);
             for(auto channel = 0u; channel < numOutputChannels; ++channel) {
-                outputChannels[channel][sample] = filter.process(output);
-
+                outputChannels[channel][sample] = filteredOutput;
             }
         }
     }
 
 
-    Saw *saw;
-    SimpleLadder filter;
+    Saw saw;
+    IIRFilter filter;
 };
 
 #define Delta_Sequence 1

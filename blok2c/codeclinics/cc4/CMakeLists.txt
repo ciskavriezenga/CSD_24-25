@@ -5,6 +5,8 @@ target_compile_definitions(Filters PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0)
 
 target_link_libraries(Filters
         PRIVATE
+        oscillators
+
         juce::juce_audio_basics
         juce::juce_audio_devices
         juce::juce_audio_formats

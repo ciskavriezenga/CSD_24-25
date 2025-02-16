@@ -2,12 +2,12 @@
 // Created by Dean on 02/12/2023.
 //
 
-#include "audiocomponent.h"
+#include <audiocomponent.h>
 #include <iostream>
 
 
 struct CustomCallback : AudioCallback {
-    explicit CustomCallback (double Fs) : AudioCallback(Fs) {
+    explicit CustomCallback (float sampleRate) : AudioCallback(sampleRate) {
 
     }
 
@@ -22,6 +22,7 @@ struct CustomCallback : AudioCallback {
     // OPDRACHT: Maak twee output signalen die verschillen
     // bijv: Links zaagtand, Recht blokgolf
     // bijv: Links Waveshaper, Rechts Delay
+    // go nuts
     void process (AudioBuffer buffer) override {
         auto [inputChannels, outputChannels, numInputChannels, numOutputChannels, numFrames] = buffer;
 

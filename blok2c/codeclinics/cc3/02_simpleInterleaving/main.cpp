@@ -20,6 +20,7 @@ int main () {
     // Can you think of any uses for interleaving?
     // How would you apply an affect to an interleaved buffer?
     // How would your approach to a Tremolo be different to a Feedback Delay?
+    // How would you expand this to allow for even more channels?
 
     return 0;
 }

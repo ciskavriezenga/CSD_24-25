@@ -62,10 +62,11 @@ void WavetableGenerator::generateSCurve(float* buffer, int bufSize, float k)
 float WavetableGenerator::map(const float value, float fromLow, float fromHigh, float toLow,
  float toHigh)
 {
-  float deltaFromLow = value - fromLow;
-  float deltaFrom = fromHigh - fromLow;
-  float normValue = deltaFromLow / deltaFrom;
-  return mapLin(normValue, toLow, toHigh);
+  // formula for lin interpolation from https://en.wikipedia.org/wiki/Interpolation
+  float partial = (value - fromLow) / (fromHigh - fromLow);
+  float delta = toHigh - toLow;
+
+  return toLow + delta * partial;
 }
 
 /*

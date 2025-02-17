@@ -21,9 +21,6 @@ int main(int argc, char **argv) {
   AudioToFile audioToFile (sourcePath + "/output.csv");
   audioToFile.write (audioSource);
 #else
-
-
-
   bool running = true;
   while (running) {
     switch (std::cin.get()) {

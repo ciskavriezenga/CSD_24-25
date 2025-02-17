@@ -33,6 +33,7 @@ np_data = np.array(data)
 t = np.arange(0, len(data), 1)
 
 # create plot
+
 fig, ax = plt.subplots()
 ax.plot(t, np_data)
 plt.yticks(np.arange(-1., 1., 1.0))

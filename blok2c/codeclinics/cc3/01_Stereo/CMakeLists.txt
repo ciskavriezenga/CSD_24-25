@@ -5,6 +5,10 @@ target_compile_definitions(Stereo PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0)
 
 target_link_libraries(Stereo
         PRIVATE
+        oscillators
+        audio
+
+
         juce::juce_audio_basics
         juce::juce_audio_devices
         juce::juce_audio_formats

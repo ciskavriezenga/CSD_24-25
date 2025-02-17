@@ -5,7 +5,6 @@ CustomCallback::CustomCallback (float sampleRate)
 
 void CustomCallback::prepare (int rate) {
   samplerate = (float) rate;
-  std::cout << "\nsamplerate: " << samplerate << "\n";
   tremolo.prepare (samplerate);
 }
 

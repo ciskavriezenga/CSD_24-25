@@ -8,21 +8,14 @@ public:
   // 0 < drywet < 1:  mix
   // drywet == 1:     wet
   // default is wet
-
   Effect(float dryWet = 1.0);
   virtual ~Effect();
-  virtual void prepare(float rate) {};
 
-
-  float processFrame(float input);
-
-  // setters & getters
-  void setDryWet(float dryWet);
+  virtual void prepare(float samplerate) = 0;
+  void processFrame(const float& input, float& output);
 
 protected:
-  // abstract method
-  virtual float applyEffect(float input) = 0;
+  virtual void applyEffect(const float& input, float& output) = 0;
 private:
-  float dry;
-  float wet;
+
 };

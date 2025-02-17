@@ -1,29 +1,49 @@
 #pragma once
+
+#include <iostream>
 #include "effect.h"
-#define BUFFER_SIZE 44100
 
-class Delay : public Effect {
+class Delay : public Effect
+{
 public:
-  Delay(int delaySamples, int maxDelaySamples,
-        float feedback = 0.0f, float dryWet = 1.0f);
-  ~Delay();
+  // TODO - parameters
+  Delay(int numDelaySamples, int maxDelaySamples);
+  virtual ~Delay();
 
-  // setters & getters
-  void setFeedback(float feedback);
+  void prepare(float samplerate) override {};
+
+  void applyEffect(const float& input, float& output) override;
+
 private:
-  float applyEffect(float sample) override;
-
-  void wrapH(int& head);
-
-
   // hide default constructor
-  Delay() {};
-  float feedback;
+  Delay(){}
+  void setDistanceRW(uint distanceRW);
+  // increase write and read heads ands wrap if necessary
+  inline void incrWriteH() {
+    writeH++;
+    wrapH(writeH);
+  }
 
-  // static buffer for the sake of simplicity (#example)
-  float buffer[BUFFER_SIZE];
-  int readH;
-  int writeH;
+  inline void incrReadH() {
+    readH++;
+    wrapH(readH);
+  }
+
+  // wrap a head if necessary
+  inline void wrapH(uint& head) {
+    if (head >= size) head -= size;
+  }
+
+  // allocate and release methods, used to alter the buffer size
+  void allocateBuffer();
+  void releaseBuffer();
+
+  // pointer to the buffer
+  float* buffer;
+  // buffer size
+  uint size;
+  // read and write heads, delay size
+  uint readH {0};
+  uint writeH {0};
+  uint distanceRW;
 };
-
-

@@ -1,41 +1,47 @@
 #include "delay.h"
 
+#include <sine.h>
 
-Delay::Delay(int delaySamples, int maxDelaySamples,
-        float feedback, float dryWet) : Effect(dryWet),
-        writeH(0), readH(BUFFER_SIZE - delaySamples) {
-  // TODO validate:
-  //    delaySamples <= maxDelaySamples
-  //    > 0 etc.
+Delay::Delay(int numDelaySamples, int maxDelaySamples) :
+size(maxDelaySamples) {
+  allocateBuffer();
+  setDistanceRW(numDelaySamples);
 }
 
-Delay::~Delay() {}
-
-float Delay::applyEffect(float sample) {
-  float output = buffer[readH++];
-  wrapH(readH);
-
-  buffer[writeH++]= sample;
-  wrapH(writeH);
-
-  // TODO implement feedback functionality
-  return output;
+Delay::~Delay() {
+  releaseBuffer();
 }
 
-void Delay::wrapH(int &head) {
-  if(head >= BUFFER_SIZE) {
-    head -= BUFFER_SIZE;
-  }
+void Delay::applyEffect(const float& input, float& output) {
+  output = buffer[readH];
+  incrReadH();
+  // TODO - instead of 0.25 use a feedback variable
+  buffer[writeH] = input + output * 0.25;
+  incrWriteH();
 }
 
-void Delay::setFeedback(float feedback)
+void Delay::allocateBuffer()
 {
-  // validate value
-  if(feedback >=0.0f && feedback <= 0.99f) {
-    this->feedback = feedback;
-  } else {
-    // TODO - log error
+  // allocate buffer and set all samples to 0
+  buffer = new float[size];
+  for (int i = 0; i < size; i++) {
+    buffer[i] = 0;
   }
-
 }
+
+void Delay::releaseBuffer()
+{
+  // free data allocated with memset
+  delete[] buffer;
+  buffer = nullptr;
+}
+
+void Delay::setDistanceRW(uint distanceRW)
+{
+  // store new distance between R & W heads and update rhead position
+  distanceRW = distanceRW;
+  readH = writeH - distanceRW + size;
+  wrapH(readH);
+}
+
 

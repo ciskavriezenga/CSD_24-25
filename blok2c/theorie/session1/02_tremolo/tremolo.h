@@ -18,7 +18,4 @@ public:
 private:
   float modDepth;
   Sine sine;
-
-  // hide default constructor
-  Tremolo(){}
 };

@@ -1,2 +1,3 @@
+add_subdirectory(01_interpolationSession)
 add_subdirectory(02_interpolation)
 add_subdirectory(03_wavetable)

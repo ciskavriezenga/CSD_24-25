@@ -13,7 +13,7 @@ public:
 
 private:
   float samplerate = 44100;
-  Tremolo tremolo = Tremolo(6 , 1);
+  Tremolo tremolo = Tremolo(20.0f , 1.0f);
 };
 
 #endif //CALLBACK_H

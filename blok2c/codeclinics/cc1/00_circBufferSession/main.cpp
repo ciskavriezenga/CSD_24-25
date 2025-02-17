@@ -20,13 +20,14 @@ int main(int argc,char **argv)
   WriteToFile fileWriter(sourcePath + "/output.csv", true);
 
   // generate 200 samples
-  // TODO - write sum of output of both the square directly and the circBuffer to a file
   float squareSample = 0;
   for(int i = 0; i < 200; i++) {
     squareSample = square.genNextSample();
-    fileWriter.write(std::to_string(squareSample) + "\n");
-    // TODO - 'plugin' the cicbuffer
+    circBuffer.write(squareSample);
+    float outputSample = (squareSample + circBuffer.read()) * 0.5;
+    fileWriter.write(std::to_string(outputSample) + "\n");
 
+    circBuffer.tick();
   }
 
   std::cout << "\n***** DONE ***** "

@@ -3,11 +3,15 @@
 #include <thread>
 #include <atomic>
 
-#define SELECT_EXAMPLE 2
+#define SELECT_EXAMPLE 1
 // 1 - issue with synchronisation
 // 2 - atomic
 // 3 - mutex
 
+/* With respect to 2:
+ * "Basically, our increment that requires a read, modify, and write of shared_val becomes a single indivisible operation."
+ * https://coffeebeforearch.github.io/2020/08/04/atomic-vs-mutex.html
+ */
 
 int main() {
 
@@ -46,7 +50,6 @@ int main() {
     for (int i = 0; i < N; i++) {
       std::lock_guard <std::mutex> guard(mutex);
       shared_val++;
-
     }
   };
 

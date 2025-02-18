@@ -3,7 +3,7 @@
 #include <iostream>
 
 WaveShaper::WaveShaper(float dryWet) : Effect(dryWet) {
-  WavetableGenerator::generateSCurve(buffer, BUFFER_SIZE, 10.0f);
+  WavetableGenerator::generateSCurve(buffer, BUFFER_SIZE, 100.0f);
 
 }
 

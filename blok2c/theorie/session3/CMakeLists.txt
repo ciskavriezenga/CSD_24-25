@@ -1,2 +1,3 @@
 add_subdirectory(01_waveGenerator)
 add_subdirectory(02_waveshaperSession)
+add_subdirectory(03_threads_sync)

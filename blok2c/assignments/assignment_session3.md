@@ -6,7 +6,7 @@
 - **Deadline**: cpp session in week 4
 
 ### StereoChorus
-- **Deadline**: practicum week 4 (or 5)
+- **Deadline**: practicum week 5
 
 
 ### Start working on "Opdracht CSD2c - Effect eigen ontwerp"

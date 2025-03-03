@@ -1,0 +1,8 @@
+add_subdirectory(00_opencv_test)
+add_subdirectory(1_basic_buffer_BW)
+add_subdirectory(2_basic_buffer_color)
+add_subdirectory(3_basic_image_IO)
+add_subdirectory(4_basic_image_filter)
+add_subdirectory(5_basic_image_binary)
+add_subdirectory(6_basic_background_subtraction)
+add_subdirectory(7_AR_checkerboard)

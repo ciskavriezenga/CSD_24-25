@@ -11,17 +11,16 @@
 ####################################################################/
 
 CC = g++ -g
-CFLAGS = -Wall
-
+CFLAGS = -Wall -std=c++1z -I/opt/homebrew/Cellar/liblo/0.32/include
+LDFLAGS = -llo -L/opt/homebrew/lib
 
 all: osc_client osc_server
 
-
 osc_client: osc_client.o
-	$(CC) -o $@ $(CFLAGS) osc_client.o -llo
+	$(CC) -o $@ $(CFLAGS) osc_client.o $(LDFLAGS)
 
 osc_server: osc_server.o osc.o
-	$(CC) -o $@ $(CFLAGS) osc_server.o osc.o -llo
+	$(CC) -o $@ $(CFLAGS) osc_server.o osc.o $(LDFLAGS)
 
 
 .cpp.o:

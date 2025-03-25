@@ -260,7 +260,7 @@ void AudioPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer,
         auto* writePointer = buffer.getWritePointer (channel); // input
 		auto* readPointer = buffer.getReadPointer (channel); // output
 		for(auto sample = 0; sample < buffer.getNumSamples(); ++sample){
-			readPointer[sample] = filters[channel][sample].process(writePointer[sample]);
+			writePointer[sample] = filters[channel].process(readPointer[sample]);
 		}
     }
 }
